@@ -1,6 +1,103 @@
-# 🔐 Glitch Crypt
+# Glitch Crypt - Modular Architecture
 
-A cyberpunk-themed text encryption and decryption tool with stunning visual effects and glitch animations.
+A cyberpunk-themed encryption tool with glitch visual effects, now organized in a modular architecture for better maintainability and scalability.
+
+## 🏗️ Modular Structure
+
+The application has been refactored into a clean, modular architecture with the following structure:
+
+```
+GLITCH/
+├── index.html              # Main HTML file
+├── script.js               # Entry point (imports modular app)
+├── styles.css              # CSS styles
+├── modules/                # Modular JavaScript components
+│   ├── app.js             # Main application orchestrator
+│   ├── crypto.js          # Encryption/decryption logic
+│   ├── animations.js      # Visual animations and effects
+│   ├── ui.js              # User interface interactions
+│   └── effects.js         # Visual effects and cursor interactions
+└── README.md              # This file
+```
+
+## 📦 Module Overview
+
+### `app.js` - Main Application
+- **Purpose**: Orchestrates all other modules
+- **Responsibilities**: 
+  - Initializes all managers
+  - Coordinates module interactions
+  - Handles application lifecycle
+
+### `crypto.js` - Encryption Module
+- **Purpose**: Handles all encryption/decryption operations
+- **Key Features**:
+  - XOR cipher with salted keys
+  - Base64 encoding/decoding
+  - Error handling for invalid inputs
+- **Class**: `CryptoManager`
+
+### `animations.js` - Animation Module
+- **Purpose**: Manages all visual animations and effects
+- **Key Features**:
+  - Glitch animations
+  - Typing effects
+  - Particle systems (floating and click particles)
+  - Animation loops
+- **Class**: `AnimationManager`
+
+### `ui.js` - User Interface Module
+- **Purpose**: Handles user interactions and UI events
+- **Key Features**:
+  - Button event handlers
+  - Input field management
+  - Instructions panel
+  - Form validation
+- **Class**: `UIManager`
+
+### `effects.js` - Visual Effects Module
+- **Purpose**: Manages visual effects and cursor interactions
+- **Key Features**:
+  - Custom cursor effects
+  - Click effects
+  - Glitch styling for UI elements
+  - Random cursor glitches
+- **Class**: `EffectsManager`
+
+## 🔧 Benefits of Modular Architecture
+
+1. **Separation of Concerns**: Each module has a single, well-defined responsibility
+2. **Maintainability**: Easier to locate and fix issues
+3. **Testability**: Individual modules can be tested in isolation
+4. **Scalability**: New features can be added as separate modules
+5. **Reusability**: Modules can be reused in other projects
+6. **Code Organization**: Clear structure makes the codebase easier to understand
+
+## 🚀 Usage
+
+The application works exactly the same as before - simply open `index.html` in a modern browser. The modular structure is transparent to the end user.
+
+## 🛠️ Development
+
+To modify or extend the application:
+
+1. **Adding new animations**: Extend the `AnimationManager` class
+2. **Adding new crypto features**: Extend the `CryptoManager` class
+3. **Adding new UI features**: Extend the `UIManager` class
+4. **Adding new visual effects**: Extend the `EffectsManager` class
+5. **Adding new modules**: Create a new module and import it in `app.js`
+
+## 📝 Dependencies
+
+- Modern browser with ES6 module support
+- No external dependencies required
+
+## 🎨 Features
+
+- **Encryption/Decryption**: XOR cipher with salted keys
+- **Visual Effects**: Glitch animations, particles, custom cursor
+- **User Experience**: Typing animations, responsive design
+- **Security**: Client-side encryption with customizable keys
 
 ![Glitch Crypt](https://img.shields.io/badge/Status-Online-brightgreen)
 ![License](https://img.shields.io/badge/License-MIT-blue)
@@ -96,16 +193,6 @@ A cyberpunk-themed text encryption and decryption tool with stunning visual effe
 - **Tablet**: 768px - 1024px
 - **Desktop**: > 1024px
 - **Large Screens**: > 2000px
-
-## 📁 Project Structure
-
-```
-GLITCH/
-├── index.html          # Main HTML file
-├── styles.css          # All styling and animations
-├── script.js           # Encryption logic and interactions
-└── README.md           # This file
-```
 
 ## 🔧 Customization
 
